@@ -1,0 +1,16 @@
+<form (ngSubmit)="getAuthor()">
+    <label for="authorId">Author ID:</label>
+    <input type="number" id="authorId" [(ngModel)]="authorId" name="authorId" required>
+    <button type="submit">Get Author</button>
+  </form>
+  
+  <div *ngIf="author">
+    <p><strong>First Name:</strong> {{ author.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ author.lastName }}</p>
+    <p><strong>Bio:</strong> {{ author.bio }}</p>
+  </div>
+  
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+  
